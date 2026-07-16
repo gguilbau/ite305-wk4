@@ -1,0 +1,60 @@
+<h1>Private Lessons</h1>
+<p>Private lessons are conducted on an as-needed basis. Our trainers can help with complex behavioral issues such as
+    resource guarding, reactivity, inappropriate elimination, and unwanted barking. We can also give you personalized
+    instruction to better reach your obedience goals, compete in AKC-sanctioned competitions, or simply improve your
+    bond with your dog. To better assist you, please fill out the request form below and a member will reply to
+    ask clarifying questions and schedule the services most pertinent to your needs.</p>
+
+<h1>Contact Form</h1>
+<form class="request-form">
+    <label for="inputName">Name</label>
+    <input type="text" id="inputName" class="form-control">
+    
+    <label for="inputEmail">Email</label>
+    <input type="text" id="inputEmail" class="form-control">
+    
+    <label for="inputPhone">Phone</label>
+    <input type="text" id="inputPhone" class="form-control">
+
+    <label for="inputCategory">Request Category</label>
+    <select id="inputCategory" class="form-control">
+        <option>Obedience</option>
+        <option>Resource Guarding / Reactivity</option>
+        <option>Agility</option>
+        <option>Communication</option>
+        <option>Other</option>
+    </select>
+
+    <label for="inputDescription">Description of Goals</label>
+    <textarea id="inputDescription" class="form-control" rows="4"></textarea>
+
+    <button class="form-control" id="submitRequest">Submit</button>    
+</form>
+
+<script>
+    // Set user data at higher scope so it can persist through confirmation page.
+    let userData = null;
+
+    $("#submitRequest").on("click", function (e) {
+        // Stop the submit from reloading page
+        e.preventDefault();
+
+        // Store user data..
+        userData = {
+            name: $("#inputName").val(),
+            email: $("#inputEmail").val(),
+            phone: $("#inputPhone").val(),
+            category: $("#inputCategory").val(),
+            description: $("#inputDescription").val()
+        };
+        
+        // Load using jquery and flush input to new page
+        $("#bodyContent").load("confirmation.html", function() {
+            $("#confirmName").text(userData.name);
+            $("#confirmEmail").text(userData.email);
+            $("#confirmPhone").text(userData.phone);
+            $("#confirmCategory").text(userData.category);
+            $("#confirmDescription").text(userData.description);
+        });
+    });
+</script>

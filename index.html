@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+        <script>
+            // Loads the content of a page into the bodyContent div
+            function loadBody(content){
+                $("#bodyContent").load(content, function(responseText, textStatus, jqXHR) {
+                    if (textStatus === "error") {
+                        $("#bodyContent").html(`<p>Failed to load ${content}.</p> <p>${jqXHR.statusText}</p>`);
+                    }
+                });
+            }
+        </script>
+        <title>Canine Companions Dog Training</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="jumbotron main-heading">
+                <h1>Canine Companions Dog Training</h1>
+                <p>At Canine Companions, we offer group classes, private lessons, and board-and-train services to
+                    help you and your furry friend develop mutual understanding and a lasting bond.</p>
+            </div>
+            <div class="row">
+                <div class="col-3"><div class="navi-button" onclick="loadBody('group-classes.html')">Group Classes</div></div>
+                <div class="col-3"><div class="navi-button" onclick="loadBody('private-lessons.html')">Private Lessons</div></div>
+                <div class="col-3"><div class="navi-button" onclick="loadBody('about-us.html')">About Us</div></div>
+                <div class="col-3"><div class="navi-button" onclick="loadBody('references.html')">References</div></div>
+            </div>
+        </div>
+        <div id="bodyContent" class="container">
+            <!-- https://www.pexels.com/photo/dog-walking-adventure-in-scenic-winter-30638238/ -->
+            <img src="assets/main.jpg" class="img-fluid"></img>
+            <div class="citation">
+                <b>Figure 1.</b> Two adults walking a group of dogs on a scenic winter trail outdoors.<br>
+                wr heustis (Feb. 8, 2025)
+            </div>
+        </div>
+        <div class="container footer">
+            Garrett Guilbault<br>
+            July 16, 2026<br>
+            No real services are offered. This site is an educational exercise.<br>
+        </div>
+    </body>
+</html>

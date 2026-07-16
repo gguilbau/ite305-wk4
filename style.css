@@ -1,0 +1,37 @@
+.main-heading {
+    color:black;
+    background-color: rgb(80, 160, 160);
+}
+.navi-button {
+    background: rgb(80, 160, 160);
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    border: 9px solid black;
+    border-radius: 8px;
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.navi-button:hover {
+    background-color: rgb(120, 240, 240);
+}
+body {
+    padding-bottom: 60px;
+}
+#bodyContent {
+    padding: 30px;
+}
+li {
+    padding: 5px
+}
+.citation {
+    color: rgb(80, 80, 80);
+    text-align: center;
+}
+.footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
