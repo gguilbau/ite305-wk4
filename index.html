@@ -6,16 +6,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="style.css" />
         <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-        <script>
-            // Loads the content of a page into the bodyContent div
-            function loadBody(content){
-                $("#bodyContent").load(content, function(responseText, textStatus, jqXHR) {
-                    if (textStatus === "error") {
-                        $("#bodyContent").html(`<p>Failed to load ${content}.</p> <p>${jqXHR.statusText}</p>`);
-                    }
-                });
-            }
-        </script>
+        <script src="app.js"></script>
         <title>Canine Companions Dog Training</title>
     </head>
     <body>

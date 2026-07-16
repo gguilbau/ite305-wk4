@@ -10,25 +10,3 @@ Description: <p id="confirmDescription"></p><br>
     <input type="checkbox" id="confirmAccuracy" class="form-control">
     <button class="form-control" id="confirmRequest">Submit</button>    
 </form>
-
-<script>
-    $("#confirmRequest").on("click", function(e)
-    {
-        // Stop the submit from reloading page
-        e.preventDefault();
-        
-        // Check if user verified accuracy..
-        if ($('#confirmAccuracy').is(':checked')) {            
-            // Load using jquery and flush input to new page
-            $("#bodyContent").load("success.html", function() {
-                $("#successMessage").text(`Thank you, ${userData.name}! You will receive a reply at ${userData.email} within 24 hours.`);
-            });
-
-        }
-
-        // Display success page..
-        else {
-            alert("You must confirm your information is accurate to submit a request.");
-        }
-    });
-</script>

@@ -30,31 +30,3 @@
 
     <button class="form-control" id="submitRequest">Submit</button>    
 </form>
-
-<script>
-    // Set user data at higher scope so it can persist through confirmation page.
-    let userData = null;
-
-    $("#submitRequest").on("click", function (e) {
-        // Stop the submit from reloading page
-        e.preventDefault();
-
-        // Store user data..
-        userData = {
-            name: $("#inputName").val(),
-            email: $("#inputEmail").val(),
-            phone: $("#inputPhone").val(),
-            category: $("#inputCategory").val(),
-            description: $("#inputDescription").val()
-        };
-        
-        // Load using jquery and flush input to new page
-        $("#bodyContent").load("confirmation.html", function() {
-            $("#confirmName").text(userData.name);
-            $("#confirmEmail").text(userData.email);
-            $("#confirmPhone").text(userData.phone);
-            $("#confirmCategory").text(userData.category);
-            $("#confirmDescription").text(userData.description);
-        });
-    });
-</script>
